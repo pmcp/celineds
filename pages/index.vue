@@ -1,65 +1,44 @@
 <template>
-  <section class="container">
-    <div>
-      <logo/>
-      <h1 class="title">
-        Céline De Schepper
-      </h1>
-      <h2 class="subtitle">
-        Portfolio Céline De Schepper
-      </h2>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          class="button--green">Documentation</a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey">GitHub</a>
+
+  <main class="cf pa3 pa4-m pa5-l mw9 w-100 center">
+    <div class="flex flex-wrap">
+      <div
+        v-for="(category, key) in categories"
+        :key="key"
+        class="outline w-25 pa3 mr2 tc "
+      >
+        <a :href="category.linkedArticle.slug">{{ category.name }}</a>
       </div>
     </div>
-  </section>
+  </main>
+
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
+// import Logo from '~/components/Logo.vue'
 
 export default {
-  components: {
-    Logo
+  async asyncData({ app }) {
+    const { data } = await app.$axios.post(
+      process.env.COCKPIT_API_URL +
+        'collections/get/Categories?token=' +
+        process.env.COCKPIT_API_TOKEN,
+      JSON.stringify({
+        // filter: { published: true },
+        // sort: { _created: -1 },
+        populate: 1
+      }),
+      {
+        headers: { 'Content-Type': 'application/json' }
+      }
+    )
+    return {
+      categories: data.entries
+    }
   }
 }
 </script>
 
-<style>
-.container {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
-}
+<style lang="scss">
+@import '~tachyons';
 </style>
