@@ -111,9 +111,7 @@ module.exports = {
           headers: { 'Content-Type': 'application/json' }
         }
       )
-      console.log('HERE')
       return data.entries.map(project => {
-        console.log(project)
         return {
           route: project.slug,
           payload: project
