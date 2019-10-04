@@ -3,7 +3,7 @@
     <page-header />
     <nuxt />
 
-    <!-- <page-footer :globals="globals" /> -->
+    <!-- <page-footer/> -->
   </div>
 </template>
 
