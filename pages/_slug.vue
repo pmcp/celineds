@@ -1,7 +1,12 @@
 <template>
   <section>
 
-    {{ project }}
+    <div
+      v-for="(layout, key) in project.layout"
+      :key="key"
+    >
+      {{ layout }}
+    </div>
 
   </section>
 </template>
@@ -14,7 +19,7 @@ export default {
     } else {
       let { data } = await app.$axios.post(
         process.env.COCKPIT_API_URL +
-          'collections/get/projects?token=' +
+          'collections/get/projects' +
           process.env.COCKPIT_API_TOKEN,
         JSON.stringify({
           filter: { published: true, slug: params.slug },

@@ -16,12 +16,12 @@
 
 <script>
 // import Logo from '~/components/Logo.vue'
-
+import { mapMutations } from 'vuex'
 export default {
-  async asyncData({ app }) {
+  async asyncData({ app, store }) {
     const { data } = await app.$axios.post(
       process.env.COCKPIT_API_URL +
-        'collections/get/Categories?token=' +
+        'collections/get/Categories' +
         process.env.COCKPIT_API_TOKEN,
       JSON.stringify({
         // filter: { published: true },

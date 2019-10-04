@@ -2,7 +2,8 @@
   <div>
     <page-header />
     <nuxt />
-    <page-footer />
+
+    <!-- <page-footer :globals="globals" /> -->
   </div>
 </template>
 
