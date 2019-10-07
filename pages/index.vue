@@ -15,7 +15,6 @@
 </template>
 
 <script>
-// import Logo from '~/components/Logo.vue'
 import { mapMutations } from 'vuex'
 export default {
   async asyncData({ app, store }) {
