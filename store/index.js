@@ -29,8 +29,5 @@ export const actions = {
       .catch(e => {
         console.log(e)
       })
-    // console.log('HERE', data)
-    // await commit('setGlobals', data.title)
-    // return
   }
 }

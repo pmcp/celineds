@@ -1,27 +1,40 @@
-<template>
+<template :style="styleObject">
   <div :style="styleObject">
-    Section: {{ layout }}
+    <component
+      v-for="(block, key) in blocks"
+      :key="key"
+      :is="block.component"
+      :block="block.settings"
+    />
   </div>
 </template>
 
 <script>
-import { mapState } from 'vuex'
+import imageblock from '~/components/blocks/imageblock.vue'
+import verticalDivider from '~/components/blocks/verticalDivider.vue'
+import textBlock from '~/components/blocks/textBlock.vue'
 export default {
+  components: {
+    imageblock: imageblock,
+    verticalDivider: verticalDivider,
+    textBlock: textBlock
+  },
   props: {
-    layout: {
+    settings: {
       type: Object,
       default: () => {
-        settings: {
-          width: '100%'
-        }
+        width: '100%'
       }
+    },
+    blocks: {
+      type: Array,
+      default: () => []
     }
   },
   computed: {
     styleObject() {
       return {
-        width: this.layout.settings.width + '%',
-        backgroundColor: 'red'
+        width: this.settings.width + '%'
       }
     }
   }
