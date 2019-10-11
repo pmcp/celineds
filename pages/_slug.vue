@@ -52,22 +52,24 @@ export default {
           headers: { 'Content-Type': 'application/json' }
         }
       )
+      console.log(data.entries[0].layout)
+      // if (data.entries[0].layout) {
+      //   data.entries[0].layout.forEach(section => {
+      //     // console.log(section.children)
+      //     if (section.children != []) {
+      //       section.children.forEach(block => {
+      //         if (block.settings && block.settings.image) {
+      //           // f(block.settings.image.path).then(result => {
+      //           //   console.log('here', result)
+      //           // })
+      //         }
 
-      data.entries[0].layout.forEach(section => {
-        // console.log(section.children)
-        if (section.children != []) {
-          section.children.forEach(block => {
-            if (block.settings && block.settings.image) {
-              f(block.settings.image.path).then(result => {
-                console.log('here', result)
-              })
-            }
-
-            // if (section.children != []) {
-            // }
-          })
-        }
-      })
+      //         // if (section.children != []) {
+      //         // }
+      //       })
+      //     }
+      //   })
+      // }
 
       if (!data.entries[0]) {
         return error({ message: '404 Page not found', statusCode: 404 })

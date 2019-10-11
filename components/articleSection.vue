@@ -10,12 +10,12 @@
 </template>
 
 <script>
-import imageblock from '~/components/blocks/imageBlock.vue'
+import imageBlock from '~/components/blocks/imageBlock.vue'
 import verticalDivider from '~/components/blocks/verticalDivider.vue'
 import textBlock from '~/components/blocks/textBlock.vue'
 export default {
   components: {
-    imageblock: imageblock,
+    imageBlock: imageBlock,
     verticalDivider: verticalDivider,
     textBlock: textBlock
   },

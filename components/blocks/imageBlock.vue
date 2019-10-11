@@ -1,8 +1,11 @@
 <template>
-  <img
-    :src="imageSrc"
+  <div
     :style="styleObject"
-    class="image--basic">
+    class="imageContainer" >
+    <img
+      :src="imageSrc"
+      class="image--basic">
+  </div>
 </template>
 
 <script>
@@ -15,8 +18,8 @@ export default {
   },
   computed: {
     imageSrc() {
-      return `http://celinedscms.friendlyinter.net
-${this.block.image.styles[0].path}`
+      return `http://celinedscms.friendlyinter.net/storage/uploads/
+${this.block.image.path}`
     },
     styleObject() {
       return {
@@ -29,8 +32,10 @@ ${this.block.image.styles[0].path}`
 <style lang="scss" scoped>
 .image {
   &--basic {
-    object-fit: contain;
-    object-position: top;
+    width: 100%;
+    height: auto;
+    // object-fit: contain;
+    // object-position: top;
   }
 }
 </style>
