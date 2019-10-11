@@ -11,12 +11,14 @@
 
 <script>
 import imageBlock from '~/components/blocks/imageBlock.vue'
-import verticalDivider from '~/components/blocks/verticalDivider.vue'
 import textBlock from '~/components/blocks/textBlock.vue'
+import verticalDivider from '~/components/blocks/verticalDivider.vue'
+import horizontalDivider from '~/components/blocks/horizontalDivider.vue'
 export default {
   components: {
     imageBlock: imageBlock,
     verticalDivider: verticalDivider,
+    horizontalDivider: horizontalDivider,
     textBlock: textBlock
   },
   props: {
