@@ -2,10 +2,10 @@ require('dotenv').config()
 import axios from 'axios'
 const pkg = require('./package')
 // PURGE CSS INFO FROM https://www.purgecss.com/guides/nuxt
-import PurgecssPlugin from 'purgecss-webpack-plugin'
+// import PurgecssPlugin from 'purgecss-webpack-plugin'
 import glob from 'glob-all'
 import path from 'path'
-import purgecss from '@fullhuman/postcss-purgecss'
+// import purgecss from '@fullhuman/postcss-purgecss'
 module.exports = {
   mode: 'universal',
   /*
@@ -56,14 +56,14 @@ module.exports = {
   build: {
     postcss: {
       plugins: [
-        purgecss({
-          content: [
-            './pages/**/*.vue',
-            './layouts/**/*.vue',
-            './components/**/*.vue'
-          ],
-          whitelist: ['html', 'body']
-        })
+        // purgecss({
+        //   content: [
+        //     './pages/**/*.vue',
+        //     './layouts/**/*.vue',
+        //     './components/**/*.vue'
+        //   ],
+        //   whitelist: ['html', 'body']
+        // })
       ]
     },
     /*
