@@ -4,6 +4,9 @@
     "description": "Portfolio Céline De Schepper",
     "author": "Maarten Lauwaert",
     "private": true,
+    "engines": {
+      "node": "12.2.0"
+    },
     "scripts": {
         "dev": "nuxt",
         "build": "nuxt build",
