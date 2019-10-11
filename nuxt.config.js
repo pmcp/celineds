@@ -83,16 +83,16 @@ module.exports = {
       if (!ctx.isDev) {
         // Remove unused CSS using PurgeCSS. See https://github.com/FullHuman/purgecss
         // for more information about PurgeCSS.
-        config.plugins.push(
-          new PurgecssPlugin({
-            paths: glob.sync([
-              path.join(__dirname, './pages/**/*.vue'),
-              path.join(__dirname, './layouts/**/*.vue'),
-              path.join(__dirname, './components/**/*.vue')
-            ]),
-            whitelist: ['html', 'body']
-          })
-        )
+        // config.plugins.push(
+        //   new PurgecssPlugin({
+        //     paths: glob.sync([
+        //       path.join(__dirname, './pages/**/*.vue'),
+        //       path.join(__dirname, './layouts/**/*.vue'),
+        //       path.join(__dirname, './components/**/*.vue')
+        //     ]),
+        //     whitelist: ['html', 'body']
+        //   })
+        // )
       }
     }
   },
