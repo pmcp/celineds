@@ -2,7 +2,9 @@
   <div
     :style="styleObject"
     class="imageContainer" >
+    
     <img
+      v-if="block.image !== null"
       :src="imageSrc"
       class="image--basic">
   </div>
