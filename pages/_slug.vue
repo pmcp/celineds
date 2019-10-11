@@ -36,7 +36,6 @@ export default {
     }
 
     if (payload) {
-      console.log(payload)
       return { project: payload }
     } else {
       let { data } = await app.$axios.post(
@@ -52,7 +51,6 @@ export default {
           headers: { 'Content-Type': 'application/json' }
         }
       )
-      console.log(data.entries[0].layout)
       // if (data.entries[0].layout) {
       //   data.entries[0].layout.forEach(section => {
       //     // console.log(section.children)
