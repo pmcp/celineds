@@ -1,7 +1,8 @@
 <template>
   <section
     v-if="project && project.layout"
-    class="article-layout__section">
+    class="article-layout__section"
+  >
     <article-section
       v-for="(section, key) in project.layout"
       :key="key"
