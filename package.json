@@ -19,7 +19,7 @@
     "dependencies": {
         "@nuxtjs/axios": "^5.0.0",
         "cross-env": "^5.2.0",
-        "nuxt": "^2.9.2",
+        "nuxt": "^2.15.8",
         "tachyons-debug": "^1.1.11"
     },
     "devDependencies": {
